@@ -64,6 +64,7 @@ void ProjectConfigurationManagement::readProjectConfiguration(DynamicJsonDocumen
   conf.lora.signalBandwidth = data["lora"]["signal_bandwidth"] | 125000;
   conf.lora.codingRate4     = data["lora"]["coding_rate4"] | 5;
   conf.lora.tx_enable       = data["lora"]["tx_enable"] | true;
+  conf.lora.add_snr         = data["lora"]["add_snr"] | false;
 
   conf.display.alwaysOn     = data["display"]["always_on"] | true;
   conf.display.timeout      = data["display"]["timeout"] | 10;
@@ -150,6 +151,7 @@ void ProjectConfigurationManagement::writeProjectConfiguration(Configuration &co
   data["lora"]["signal_bandwidth"]        = conf.lora.signalBandwidth;
   data["lora"]["coding_rate4"]            = conf.lora.codingRate4;
   data["lora"]["tx_enable"]               = conf.lora.tx_enable;
+  data["lora"]["add_snr"]                 = conf.lora.add_snr;
   data["display"]["always_on"]            = conf.display.alwaysOn;
   data["display"]["timeout"]              = conf.display.timeout;
   data["display"]["overwrite_pin"]        = conf.display.overwritePin;
