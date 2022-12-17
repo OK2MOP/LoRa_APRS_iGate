@@ -138,7 +138,7 @@ bool RadiolibTask::loop(System &system) {
         } else {
           std::shared_ptr<APRSMessage> msg = std::shared_ptr<APRSMessage>(new APRSMessage());
           if (config.add_snr) {
-            str += String(" SNR=") + ((int)-radio->getSNR()) + "dB RSSI=" + (int)radio->getRSSI() + "dB";
+            str += String(" SNR=") + ((int)radio->getSNR()) + "dB RSSI=" + (int)radio->getRSSI() + "dB";
           }
           msg->decode(str.substring(3));
           _fromModem.addElement(msg);
